@@ -1,0 +1,97 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edite utilisateur</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="list-user"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="ion-margin">
+    <form #f="ngForm" (ngSubmit)="editeUser()">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="3">
+            <img [src]="updatededUser.avatar" class="img-responsive image-round border-tertiary margin-top"/>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <label for="nom">Nom</label>
+      <input [(ngModel)]="updatededUser.nom" type="text" class="form-control" name="nom" id="nom" />
+      <label for="prenom">Prénom</label>
+      <input
+      [(ngModel)]="updatededUser.prenom"
+        type="text"
+        class="form-control"
+        name="prenom"
+        id="prenom"
+      />
+      <label for="telephone">Téléphone</label>
+      <input
+      [(ngModel)]="updatededUser.telephone"
+        type="text"
+        class="form-control"
+        name="telephone"
+        id="telephone"
+      />
+      <label for="avatar">Avatar</label>
+      <input
+      [(ngModel)]="updatededUser.avatar"
+        type="text"
+        class="form-control"
+        name="avatar"
+        id="avatar"
+      />
+      <label for="cin">carte de CIN</label>
+      <input [(ngModel)]="updatededUser.cin" type="text" class="form-control" name="cin" id="cin" />
+
+      <label for="datenaissance">Date de naissance</label>
+      <input
+      [(ngModel)]="updatededUser.datenaissance"
+        type="text"
+        class="form-control"
+        name="datenaissance"
+        id="datenaissance"
+      />
+
+      <label for="email">Adresse mail</label>
+      <input [(ngModel)]="updatededUser.email" type="text" class="form-control" name="email" id="email" />
+
+      <label for="adresse">Adresse</label>
+      <input
+      [(ngModel)]="updatededUser.adresse"
+        type="text"
+        class="form-control"
+        name="adresse"
+        id="adresse"
+      />
+      <label for="codepostale">Code postale</label>
+      <input
+      [(ngModel)]="updatededUser.codepostale"
+        type="text"
+        class="form-control"
+        name="codepostale"
+        id="codepostale"
+      />
+      <label>Rôle</label>
+      <ion-select
+        interface="popover"
+        [(ngModel)]="updatededUser.role"
+        type="text"
+        class="form-control"
+        name="role"
+        id="role"
+        value="{{updatededUser.role}}"
+      >
+        <ion-select-option value="admin">Administrateur</ion-select-option>
+        <ion-select-option value="vendeur">Vendeur</ion-select-option>
+        <ion-select-option value="acheteur">Acheteur</ion-select-option>
+      </ion-select>
+      <br /><br />
+      <ion-button type="submit" expand="block">Valider</ion-button>
+    </form>
+  </div>
+  
+</ion-content>

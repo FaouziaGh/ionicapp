@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Gestion des Annonces
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-raw>
+    <ion-col size-md="6" offset-md="3">
+      <ion-list>
+        <ion-item
+          *ngFor="let utilisateur of users"
+          [routerLink]="['detail-user', utilisateur.id]"
+        >
+          <ion-avatar slot="start">
+            <ion-img [src]="utilisateur.avatar"></ion-img>
+          </ion-avatar>
+          <ion-label>
+            {{utilisateur.nom}} {{utilisateur.prenom}}:
+            <strong>{{utilisateur.role}}</strong></ion-label
+          >
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-raw>
+</ion-content>

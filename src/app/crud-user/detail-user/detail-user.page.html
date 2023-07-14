@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="deleteUser()">
+        <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="goToEdit()">
+      <ion-icon name="create" slot="icon-only"></ion-icon>
+    </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="list-user"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="vertical-padding">
+    <div class="ion-text-center">
+      <h4 class="text-tertiary">
+        {{users.prenom}} {{users.nom}}
+      </h4>
+    </div>
+    <div class="ion-text-center">
+      <span class="text-muted ion-no-margin text-job"
+        ><strong>{{users.role}}</strong></span
+      >
+    </div>
+
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="4" class="ion-no-padding position-relative">
+          <ion-button fill="clear" class="button-vertical-align button-left">
+            <ion-icon slot="icon-only" name="chatbubbles"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <img
+            [src]="users.avatar"
+            class="image-round border-tertiary margin-top"
+          />
+          <br />
+        </ion-col>
+        <ion-col size="4" class="ion-no-padding position-relative">
+          <ion-button fill="clear" class="button-vertical-align button-right">
+            <ion-icon slot="icon-only" name="call"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <br /><br /><br />
+  <div class="ion-padding">
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col size="6">
+          <strong class="text-tertiary">Addresse mail</strong> <br />
+          <small class="text-muted">{{users.email}}</small>
+        </ion-col>
+        <ion-col size="6">
+          <strong class="text-tertiary">Numéro de Téléphone</strong> <br />
+          <small class="text-muted">{{users.telephone}}</small>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <strong class="text-tertiary">Numéro de CIN</strong> <br />
+          <small class="text-muted">{{users.cin}}</small>
+        </ion-col>
+        <ion-col size="6">
+          <strong class="text-tertiary">Date de naissance</strong> <br />
+          <small class="text-muted">{{users.datenaissance}}</small>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <strong class="text-tertiary">Addresse</strong> <br />
+          <small class="text-muted">{{users.adresse}}</small>
+        </ion-col>
+        <ion-col size="6">
+          <strong class="text-tertiary">Code Postale</strong> <br />
+          <small class="text-muted">{{users.codepostale}}</small>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

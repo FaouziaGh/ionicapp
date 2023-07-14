@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Ajouter nouveau utilisateur</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-margin">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <label for="nom">Nom</label>
+      <input ngModel type="text" class="form-control" name="nom" id="nom" />
+      <label for="prenom">Prénom</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        name="prenom"
+        id="prenom"
+      />
+      <label for="telephone">Téléphone</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        name="telephone"
+        id="telephone"
+      />
+      <label for="avatar">Avatar</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        name="avatar"
+        id="avatar"
+      />
+      <label for="cin">carte de CIN</label>
+      <input ngModel type="text" class="form-control" name="cin" id="cin" />
+
+      <label for="datenaissance">Date de naissance</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        name="datenaissance"
+        id="datenaissance"
+      />
+
+      <label for="email">Adresse mail</label>
+      <input ngModel type="text" class="form-control" name="email" id="email" />
+
+      <label for="adresse">Adresse</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        name="adresse"
+        id="adresse"
+      />
+      <label for="codepostale">Code postale</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        name="codepostale"
+        id="codepostale"
+      />
+      <label>Rôle</label>
+      <ion-select
+        interface="popover"
+        ngModel
+        type="text"
+        class="form-control"
+        name="role"
+        id="role"
+      >
+        <ion-select-option value="admin">Administrateur</ion-select-option>
+        <ion-select-option value="vendeur">Vendeur</ion-select-option>
+        <ion-select-option value="acheteur">Acheteur</ion-select-option>
+      </ion-select>
+
+      <br /><br />
+      <ion-button type="submit" expand="block">Ajouter</ion-button>
+    </form>
+  </div>
+</ion-content>
